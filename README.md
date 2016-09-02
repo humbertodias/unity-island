@@ -2,7 +2,7 @@
 
 Island with Unity 5.
 
-![Solar-System](doc/island.gif)
+![Island](doc/island.gif)
 
 
 ## Prerequires
