@@ -35,11 +35,13 @@ public class PlayerControl : MonoBehaviour {
 						rbout.AddForce (ray.direction * 100);
 					}
 
-					Lamp lamp = hit.collider.gameObject.GetComponent<Lamp> ();
-					if (lamp != null) {
-						lamp.Interact ();
-					}
+//					Lamp lamp = hit.collider.gameObject.GetComponent<Lamp> ();
+//					if (lamp != null) {
+//						lamp.Interact ();
+//					}
 
+					// Envia mensagem para abrir a porta
+					hit.collider.gameObject.SendMessage ("Interact");
 
 				}
 
