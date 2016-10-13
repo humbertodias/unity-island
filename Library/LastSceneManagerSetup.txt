@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/LoneIsland.unity
+- path: Assets/islandElevador.unity
   isLoaded: 1
   isActive: 1
