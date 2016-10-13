@@ -1,18 +1,21 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PortaElevador : MonoBehaviour {
+public class PortaElevador : MonoBehaviour
+{
 
 	float deslocar = 1.0f;
 	int invert = -1;
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+	{
 	
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+	{
 
 		if (deslocar < 3 && deslocar > -3) {
 			transform.localPosition = new Vector3 ((transform.localPosition.x + deslocar * Time.deltaTime * invert), transform.localPosition.y, transform.localPosition.z);
@@ -21,18 +24,15 @@ public class PortaElevador : MonoBehaviour {
 	
 	}
 
-	public void deslocarValor(){
+	public void deslocarValor ()
+	{
 		deslocar = 1.0f;
-
-
 	}
 
-	public void invertesentido(){
+	public void invertesentido ()
+	{
 		invert = invert * -1; 
 	
 	}
-
-
-
 
 }

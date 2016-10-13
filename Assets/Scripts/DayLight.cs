@@ -5,10 +5,12 @@ public class DayLight : MonoBehaviour {
 	public float horas=0;
 	public float escalaTempo=1;
 	public Color cordiurna;
+
 	[SerializeField]
 	Light luz;
+
 	float intensidade = 0;	
-	// Use this for initialization
+
 	void Start () {
 		//horas = 06;
 		if (luz == null) {
@@ -36,4 +38,5 @@ public class DayLight : MonoBehaviour {
 			horas = horas - 24;
 		}
 	}
+
 }
