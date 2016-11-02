@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/IslandWithElevador.unity
+- path: Assets/Scenes/IslandWithElevatorAndTrain.unity
   isLoaded: 1
   isActive: 1
