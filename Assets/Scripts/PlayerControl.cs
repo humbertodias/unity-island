@@ -18,7 +18,7 @@ public class PlayerControl : MonoBehaviour
 	{
 		if (Input.GetKey (KeyCode.E)) {
 
-//			Cursor.lockState = CursorLockMode.None;
+			Cursor.lockState = CursorLockMode.None;
 
 			if (Input.GetButtonDown ("Fire1")) {
 				Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);

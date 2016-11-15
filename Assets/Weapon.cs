@@ -5,10 +5,9 @@ public class Weapon : MonoBehaviour {
 	public AudioSource fireSound;
 	public AudioClip reloadSound;
 	public AudioClip emptySound;
-	public GameObject weapongMesh;
+	public GameObject weaponMesh;
 	public ParticleSystem bulletParticle;
 	private Vector3 initialPosition;
-
 
 	float cooldown = 0;
 	int magazine = 12;
@@ -21,18 +20,22 @@ public class Weapon : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		initialPosition = transform.localPosition;
+
+		// Esconde/Bloqueia cursor
+		Cursor.lockState = CursorLockMode.Locked;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-		weapongMesh.transform.localPosition = Vector3.Lerp (weapongMesh.transform.localPosition, initialPosition
+		weaponMesh.transform.localPosition = Vector3.Lerp (weaponMesh.transform.localPosition, initialPosition
 			, Time.deltaTime * 10);
 		cooldown += Time.deltaTime;
 
 		if (Input.GetButton ("Fire1") && !Input.GetKey (KeyCode.E) && cooldown > 0.1f) {
 
-//			Cursor.lockState = CursorLockMode.None;
+			// Esconde/Bloqueia cursor
+			Cursor.lockState = CursorLockMode.Locked;
 
 			magazine--;
 			if (magazine > 0) {
@@ -42,14 +45,15 @@ public class Weapon : MonoBehaviour {
 			}
 				
 			cooldown = 0;
-		}
+		} 
 
 		if (Input.GetButtonDown ("Fire2") && magazine < 1){
 		
 			fireSound.PlayOneShot (reloadSound);
 			magazine = 12;
-			weapongMesh.transform.localPosition = new Vector3 (0, -10, -0.1f);
+			weaponMesh.transform.localPosition = new Vector3 (0, -10, -0.1f);
 		}
+
 
 }
 
@@ -58,10 +62,11 @@ public class Weapon : MonoBehaviour {
 
 		fireSound.PlayOneShot (fireSound.clip);
 
-		weapongMesh.transform.localPosition = new Vector3 (0, 0, 0.1f);
+		weaponMesh.transform.localPosition = new Vector3 (0, 0, 0.1f);
 		bulletParticle.Emit (100);
 
 		ray = Camera.main.ScreenPointToRay (Input.mousePosition);
+//		ray = Camera.main.ScreenPointToRay (transform.position);
 //		Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 //		RaycastHit hit;
 		if (Physics.Raycast (ray, out hit, 100)) {
@@ -81,7 +86,7 @@ public class Weapon : MonoBehaviour {
 		bulletParticle.Emit (30);
 		rdbout = hit.collider.gameObject.GetComponent<Rigidbody> ();
 		if (rdbout != null) {
-			rdbout.AddForceAtPosition (ray.direction * 100, hit.point);
+			rdbout.AddForceAtPosition (ray.direction * 200, hit.point);
 		}
 
 		hit.collider.gameObject.SendMessage ("kill", SendMessageOptions.DontRequireReceiver);
