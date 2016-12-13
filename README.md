@@ -31,5 +31,8 @@ Mouse or Keyboard Arrows
 
 1. [Unity Terrain](https://docs.unity3d.com/Manual/script-Terrain.html)
 
+2. [Asset Store - Modern Weapons Pack](https://www.assetstore.unity3d.com/en/#!/content/14233)
 
+3. [Asset Store -  Weapon Soldier Sounds Pack](https://www.assetstore.unity3d.com/en/#!/content/29662)
 
+4. [Asset Store - Zombie/3D Models](https://www.assetstore.unity3d.com/en/#!/content/30232)
