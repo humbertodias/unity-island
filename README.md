@@ -1,6 +1,6 @@
 # Terrain Island
 
-Island with Unity 5.
+Island with Unity.
 
 ![Island](doc/island.gif)
 
@@ -8,7 +8,7 @@ Island with Unity 5.
 ## Prerequires
 
 1. Git 2.9+
-3. Unity 5.4+
+3. Unity 2019+
 
 
 ## How to Play

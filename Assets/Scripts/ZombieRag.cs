@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using System.Collections;
+using UnityEngine.AI;
 
 public class ZombieRag : MonoBehaviour {
 
@@ -43,7 +43,7 @@ public class ZombieRag : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (agent != null && target != null) {
+		if (agent != null  && target != null) {
 			print ("update follow");
 			agent.SetDestination (target.transform.position);
 		}

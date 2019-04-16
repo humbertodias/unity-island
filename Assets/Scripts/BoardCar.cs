@@ -18,7 +18,7 @@ public class BoardCar : MonoBehaviour {
 
 		if (Input.GetButtonDown ("Jump")) {
 			if(playerInside)
-			ExitCar ();
+				ExitCar ();
 		}
 	
 	}
